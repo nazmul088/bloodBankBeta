@@ -124,10 +124,12 @@
         android:text="Available"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="310dp"
-        app:layout_constraintLeft_toRightOf="@id/textView78"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textView81"
+        android:layout_marginRight="120dp"
         app:layout_constraintTop_toTopOf="@id/textView78"
         app:layout_constraintBottom_toBottomOf="@id/textView78"
-        android:layout_marginLeft="160dp"
+        android:layout_marginLeft="20dp"
         />
 
 
@@ -138,7 +140,9 @@
         android:text="Total"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="310dp"
-        app:layout_constraintLeft_toRightOf="@id/textView79"
+        app:layout_constraintLeft_toRightOf="@+id/textView79"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="30dp"
         app:layout_constraintTop_toTopOf="@id/textView79"
         app:layout_constraintBottom_toBottomOf="@id/textView79"
         android:layout_marginLeft="60dp"
@@ -173,12 +177,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10"
+        android:textColor="#00802b"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="310dp"
-        app:layout_constraintLeft_toRightOf="@id/textView81"
         app:layout_constraintTop_toTopOf="@id/textView81"
         app:layout_constraintBottom_toBottomOf="@id/textView81"
-        android:layout_marginLeft="50dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="150dp"
         />
 
 
@@ -229,12 +234,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10"
+        android:textColor="#00802b"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="310dp"
-        app:layout_constraintLeft_toRightOf="@id/textView84"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="150dp"
         app:layout_constraintTop_toTopOf="@id/textView84"
         app:layout_constraintBottom_toBottomOf="@id/textView84"
-        android:layout_marginLeft="175dp"
         />
 
 
@@ -250,7 +256,7 @@
         android:layout_marginRight="40dp"
         app:layout_constraintTop_toTopOf="@id/textView85"
         app:layout_constraintBottom_toBottomOf="@id/textView85"
-        android:layout_marginLeft="100dp"
+
         />
 
 
@@ -284,12 +290,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10"
+        android:textColor="#00802b"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="310dp"
-        app:layout_constraintLeft_toRightOf="@id/textView87"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/textView87"
         app:layout_constraintBottom_toBottomOf="@id/textView87"
-        android:layout_marginLeft="60dp"
+        android:layout_marginRight="150dp"
         />
 
 
@@ -305,7 +312,7 @@
         android:layout_marginRight="40dp"
         app:layout_constraintTop_toTopOf="@id/textView88"
         app:layout_constraintBottom_toBottomOf="@id/textView88"
-        android:layout_marginLeft="100dp"
+
         />
 
 
@@ -341,12 +348,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10"
+        android:textColor="#00802b"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="310dp"
-        app:layout_constraintLeft_toRightOf="@id/textView90"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/textView90"
         app:layout_constraintBottom_toBottomOf="@id/textView90"
-        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
         />
 
 
@@ -362,7 +370,6 @@
         android:layout_marginRight="40dp"
         app:layout_constraintTop_toTopOf="@id/textView91"
         app:layout_constraintBottom_toBottomOf="@id/textView91"
-        android:layout_marginLeft="100dp"
         />
 
 
@@ -399,8 +406,8 @@
         android:padding="5dp"
 
         android:layout_marginTop="106dp"
-        android:background="@drawable/animation_background"
-        android:drawableRight="@drawable/ic_baseline_call_24"
+        android:background="@drawable/custom_button_2"
+        android:drawableLeft="@drawable/ic_baseline_call_24"
         android:text="Call Hospital"
 
         android:textColor="@color/white"

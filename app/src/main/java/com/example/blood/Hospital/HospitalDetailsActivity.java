@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
@@ -88,6 +89,14 @@ public class HospitalDetailsActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.textView82);
         textView.setText(String.valueOf(data.getHfn_beds_available()));
+        if(data.getHfn_beds_available() == 0)
+        {
+            textView.setTextColor(Color.RED);
+        }
+        else
+        {
+            textView.setTextColor(Color.parseColor("#00802b"));
+        }
 
 
         textView = (TextView) findViewById(R.id.textView83);
@@ -95,6 +104,15 @@ public class HospitalDetailsActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.textView85);
         textView.setText(String.valueOf(data.getIcu_beds_available()));
+        if(data.getIcu_beds_available() == 0)
+        {
+            textView.setTextColor(Color.RED);
+        }
+        else
+        {
+            textView.setTextColor(Color.parseColor("#00802b"));
+        }
+
 
         textView = (TextView) findViewById(R.id.textView86);
         textView.setText(String.valueOf(data.getIcu_beds()));
@@ -103,11 +121,29 @@ public class HospitalDetailsActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView88);
         textView.setText(String.valueOf(data.getHdu_beds_available()));
 
+        if(data.getHdu_beds_available() == 0)
+        {
+            textView.setTextColor(Color.parseColor("#ff0000"));
+        }
+        else
+        {
+            textView.setTextColor(Color.parseColor("#00802b"));
+        }
+
         textView = (TextView) findViewById(R.id.textView89);
         textView.setText(String.valueOf(data.getHdu_beds()));
 
         textView = (TextView) findViewById(R.id.textView91);
        textView.setText(String.valueOf(data.getGeneral_beds_available()));
+        if(data.getGeneral_beds_available() == 0)
+        {
+            textView.setTextColor(Color.RED);
+        }
+        else
+        {
+            textView.setTextColor(Color.parseColor("#00802b"));
+        }
+
 
         textView = (TextView) findViewById(R.id.textView92);
         textView.setText(String.valueOf(data.getGeneral_beds()));

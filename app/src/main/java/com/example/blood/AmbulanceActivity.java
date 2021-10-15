@@ -72,6 +72,8 @@ public class AmbulanceActivity extends AppCompatActivity {
     private int pageNo = 1;
     private int current_items,total_items,scroll_out_items;
 
+    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,7 @@ public class AmbulanceActivity extends AppCompatActivity {
         selectedName = "";
 
 
+        progressBar = findViewById(R.id.progressBar3);
 
         divisions = new ArrayList<>();
         districts = new ArrayList<>();
@@ -224,6 +227,7 @@ public class AmbulanceActivity extends AppCompatActivity {
                 {
                     if(response.body().size()==0)
                     {
+                        Toast.makeText(AmbulanceActivity.this, "No Data Found", Toast.LENGTH_LONG).show();
                         ambulanceSearchArrayList.clear();
                         ambulanceSearchAdapter.notifyDataSetChanged();
                     }
@@ -256,11 +260,13 @@ public class AmbulanceActivity extends AppCompatActivity {
     {
 
         pageNo++;
+        progressBar.setVisibility(View.VISIBLE);
         ambulanceApi.getAmbulanceByNameDivisionDistrict(selectedName,selectedDivisionCode,selectedDistrictCode,String.valueOf(pageNo)).enqueue(new Callback<List<Ambulance>>() {
             @Override
             public void onResponse(Call<List<Ambulance>> call, Response<List<Ambulance>> response) {
                 if(response.isSuccessful())
                 {
+                    progressBar.setVisibility(View.INVISIBLE);
                     if(response.body().size()==0)
                     {
                         //Toast.makeText(SearchBloodActivity.this,"No More Data Found",Toast.LENGTH_SHORT).show();

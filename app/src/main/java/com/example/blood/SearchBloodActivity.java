@@ -16,9 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,7 +35,9 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -91,6 +95,7 @@ public class SearchBloodActivity extends AppCompatActivity {
 
     private int pageNo = 1;
     private int current_items,total_items,scroll_out_items;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -200,7 +205,6 @@ public class SearchBloodActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.WHITE);
                 //Selected a blood group
                 String item = arrayAdapter1.getItem(i);
                 int bloodCode = 0;
@@ -239,7 +243,7 @@ public class SearchBloodActivity extends AppCompatActivity {
         ArrayList<String> availables = new ArrayList<>();
         availables.add("Select Any");
         availables.add("Available");
-        availables.add("Not Available");
+        availables.add("Unavailable");
         ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, availables);
         arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter2);
@@ -293,30 +297,8 @@ public class SearchBloodActivity extends AppCompatActivity {
         //fetch some data
 
         userSearchApi = RetrofitInstanceUserSearch.getRetrofit().create(UserSearchApi.class);
-       /* userSearchApi.searchUserByNameBloodDivisionDistrictAvailability("","","","","","1").enqueue(new Callback<List<UserSearch>>() {
-            @Override
-            public void onResponse(Call<List<UserSearch>> call, Response<List<UserSearch>> response) {
-                if(response.isSuccessful())
-                {
-                    if(response.isSuccessful())
-                    {
-                        for(int i=0;i<response.body().size();i++)
-                        {
-                            userSearchArrayList.add(response.body().get(i));
-                            userSearchAdapter.notifyDataSetChanged();
-                        }
 
-                    }
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<UserSearch>> call, Throwable t) {
-
-            }
-        });
-*/
+        progressBar = findViewById(R.id.progressBar2);
 
 
 
@@ -352,6 +334,8 @@ public class SearchBloodActivity extends AppCompatActivity {
                     textView.setVisibility(View.INVISIBLE);
                 }
 
+
+
                 textView = (TextView) view1.findViewById(R.id.textView30);
                 textView.setText(userSearch.getGender());
 
@@ -371,6 +355,22 @@ public class SearchBloodActivity extends AppCompatActivity {
 
                 //textView.setText(userSearch.getDOB());
 
+                //Now Setting Last Donation Date
+                textView = (TextView) view1.findViewById(R.id.textView63);
+                if(userSearch.getLastDonationDate()!=null)
+                {
+                    DateTimeFormatter inputFormatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+                    DateTimeFormatter outputFormatter2 = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
+
+                    date = LocalDate.parse(userSearch.getLastDonationDate(),inputFormatter1);
+                    formattedDate = outputFormatter2.format(date);
+
+                    textView.setText(formattedDate);
+                }
+                else{
+                    textView.setText("-");
+                }
+
                 textView = (TextView) view1.findViewById(R.id.textView32);
                 textView.setText(userSearch.getBloodGroup());
 
@@ -389,7 +389,7 @@ public class SearchBloodActivity extends AppCompatActivity {
                 dialog.show();
 
 
-                Button button = view1.findViewById(R.id.button);
+                ImageButton button = view1.findViewById(R.id.button);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -468,6 +468,7 @@ public class SearchBloodActivity extends AppCompatActivity {
                     {
                         userSearchArrayList.clear();
                         userSearchAdapter.notifyDataSetChanged();
+                        Toast.makeText(SearchBloodActivity.this, "No Data Found", Toast.LENGTH_LONG).show();
                     }
                     else{
                         userSearchArrayList.clear();
@@ -518,16 +519,16 @@ public class SearchBloodActivity extends AppCompatActivity {
 
     public void fetchmoreData()
     {
-
+        progressBar.setVisibility(View.VISIBLE);
        pageNo++;
         userSearchApi.searchUserByNameBloodDivisionDistrictAvailability(selectedName,selectedBloodCode,selectedDivisionCode,selectedDistrictCode,selectedAvailabilityCode,String.valueOf(pageNo)).enqueue(new Callback<List<UserSearch>>() {
                 @Override
                 public void onResponse(Call<List<UserSearch>> call, Response<List<UserSearch>> response) {
                     if(response.isSuccessful())
                     {
+                        progressBar.setVisibility(View.INVISIBLE);
                         if(response.body().size()==0)
                         {
-                            //Toast.makeText(SearchBloodActivity.this,"No More Data Found",Toast.LENGTH_SHORT).show();
                             return;
                         }
                         System.out.println("Page No: "+pageNo);

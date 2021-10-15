@@ -245,13 +245,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.about:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://absbpeople.com")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://absbpeople.com/about")));
                 break;
             case R.id.policy:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://absbpeople.com")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://absbpeople.com/absb-spondon-privacy-policy")));
                 break;
             case R.id.terms:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://absbpeople.com")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://absbpeople.com/absb-spondon-terms-and-conditions")));
                 break;
         }
 

@@ -200,7 +200,7 @@ public class SearchHospitalActivity extends AppCompatActivity {
                             datumArrayList.add(response.body().getHospitals().getData().get(i));
                             searchHospitalAdapter.notifyDataSetChanged();
                         }
-                        progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.INVISIBLE);
 
                     }
                 }

@@ -37,8 +37,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_9"
-        android:layout_width="150dp"
-        android:layout_height="190dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:padding="10dp"
         android:layout_margin="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:src="@drawable/shovito_2"
+            android:src="@drawable/shovito_1"
             android:scaleType="centerCrop"
             />
 
@@ -108,7 +108,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView4"
-            android:text="Vice President ABSB(Dhaka)"
+            android:text="Vice President ABSB (Dhaka)"
             android:textSize="10sp"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
@@ -121,8 +121,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_10"
-        android:layout_width="150dp"
-        android:layout_height="190dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:layout_margin="10dp"
         android:padding="10dp"
         app:layout_constraintLeft_toRightOf="@id/constraint_layout_9"
@@ -210,8 +210,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_11"
-        android:layout_width="150dp"
-        android:layout_height="190dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:padding="10dp"
         android:layout_margin="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -283,8 +283,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_12"
-        android:layout_width="150dp"
-        android:layout_height="190dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:layout_margin="10dp"
         android:padding="10dp"
         app:layout_constraintLeft_toRightOf="@id/constraint_layout_11"

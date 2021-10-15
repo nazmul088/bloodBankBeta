@@ -45,42 +45,7 @@ public class UserSearchAdapter extends RecyclerView.Adapter<UserSearchAdapter.Vi
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.searchlistitem, parent,false);
         return new ViewHolder(view, onItemClickListener);
 
-        /*LayoutInflater layoutInflater = context.getLayoutInflater();
-        View listViewItem = layoutInflater.inflate(R.layout.searchlistitem, null, true);
 
-
-        UserSearch userSearch = userSearchList.get(position);
-        TextView textView;
-        textView = (TextView) listViewItem.findViewById(R.id.textView10);
-        textView.setText(userSearch.getFirstName());
-
-        textView = (TextView) listViewItem.findViewById(R.id.textView11);
-        textView.setText(userSearch.getLastName());
-
-        textView = (TextView) listViewItem.findViewById(R.id.textView12);
-        textView.setText(userSearch.getDistrict().getDistrict());
-
-        textView = (TextView) listViewItem.findViewById(R.id.textView13);
-        textView.setText(userSearch.getBloodGroup());
-
-        textView = (TextView) listViewItem.findViewById(R.id.textView51);
-        textView.setText(userSearch.getDivision().getDivision());
-
-
-        textView = (TextView) listViewItem.findViewById(R.id.textView49);
-
-        if (!userSearch.isCurrentStatus()) {
-            GradientDrawable drawable = (GradientDrawable) context.getResources()
-                    .getDrawable(R.drawable.edit_text_bg_green);
-            drawable.mutate();
-            drawable.setColor(Color.RED);
-            textView.setBackground(drawable);
-            textView.setText("UnAvailable");
-        }
-
-
-
-        return listViewItem;*/
     }
 
     @Override
@@ -148,7 +113,7 @@ public class UserSearchAdapter extends RecyclerView.Adapter<UserSearchAdapter.Vi
                 //drawable.mutate();
                /// drawable.setColor(Color.RED);
               //  statusTextView.setBackground(drawable);
-                statusTextView.setText("UnAvailable");
+                statusTextView.setText("Unavailable");
                 statusTextView.setBackgroundResource(R.drawable.edit_text_bg_red);
 
             }

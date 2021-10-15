@@ -77,6 +77,7 @@ public class CylinderActivity extends AppCompatActivity {
     private int pageNo = 1;
     private int current_items,total_items,scroll_out_items;
 
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,7 @@ public class CylinderActivity extends AppCompatActivity {
                 finish();
             }
         });
+        progressBar = findViewById(R.id.progressBar3);
 
         selectedDivisionCode = "";
         selectedDistrictCode = "";
@@ -226,6 +228,8 @@ public class CylinderActivity extends AppCompatActivity {
                 {
                     if(response.body().size()==0)
                     {
+
+                        Toast.makeText(CylinderActivity.this, "No Data Found", Toast.LENGTH_LONG).show();
                         cylinderSearchArrayList.clear();
                         cylinderSearchAdapter.notifyDataSetChanged();
                     }
@@ -257,12 +261,14 @@ public class CylinderActivity extends AppCompatActivity {
     public void fetchmoreData()
     {
 
+        progressBar.setVisibility(View.VISIBLE);
         pageNo++;
         cylinderApi.getCylinderByNameDivisionDistrict(selectedName,selectedDivisionCode,selectedDistrictCode,String.valueOf(pageNo)).enqueue(new Callback<List<Cylinder>>() {
             @Override
             public void onResponse(Call<List<Cylinder>> call, Response<List<Cylinder>> response) {
                 if(response.isSuccessful())
                 {
+                    progressBar.setVisibility(View.INVISIBLE);
                     if(response.body().size()==0)
                     {
                         //Toast.makeText(SearchBloodActivity.this,"No More Data Found",Toast.LENGTH_SHORT).show();

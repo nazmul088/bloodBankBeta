@@ -58,16 +58,33 @@
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood/app/src/main/res/menu/search_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood/app/src/main/res/menu/sidemenu.xml" value="0.36666666666666664" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood/app/src/main/res/menu/upper_right_menu.xml" value="0.20104166666666667" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable-v24/custom_button.xml" value="0.22135416666666666" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable-v24/custom_button_1.xml" value="0.22135416666666666" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable-v24/custom_button_2.xml" value="0.22135416666666666" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable-v24/edit_text_bg_call.xml" value="0.22135416666666666" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/animation_background.xml" value="0.22135416666666666" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/edit_text_bg_green.xml" value="0.337037037037037" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/edit_text_bg_grey.xml" value="0.22135416666666666" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/spinner.xml" value="0.3769230769230769" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/team_image_layer.xml" value="0.22135416666666666" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/team_image_shape.xml" value="0.3769230769230769" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/team_shape.xml" value="0.337037037037037" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/drawable/top_header_1.xml" value="0.337037037037037" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_ambulance.xml" value="0.20520833333333333" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_hospital.xml" value="0.33" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_hospital_details.xml" value="0.22" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_icubeds.xml" value="0.36666666666666664" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_profile.xml" value="0.25" />
-        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_team.xml" value="0.25" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_search_blood.xml" value="0.22" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_search_hospital.xml" value="0.17747747747747747" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/activity_team.xml" value="0.5" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/ambulance_list_item.xml" value="0.25" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/call_in_search_blood.xml" value="0.19114583333333332" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/details_in_search_blood.xml" value="0.36666666666666664" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/headerfile.xml" value="0.20520833333333333" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/hospital_search_list_item.xml" value="0.20520833333333333" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/searchlistitem.xml" value="0.20520833333333333" />
+        <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/layout/toast_message.xml" value="0.17747747747747747" />
         <entry key="..\:/Study/L-4-T-1/Blood Project/Nazmul/Blood2/bloodBank-main/app/src/main/res/menu/sidemenu.xml" value="0.36666666666666664" />
       </map>
     </option>
