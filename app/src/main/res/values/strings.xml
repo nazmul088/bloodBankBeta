@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Blood</string>
+    <string name="navigation_drawer_open">Navigation Drawer Open</string>
+    <string name="navigation_drawer_close">Navigation Drawer Close</string>
+    <string name="log_out">Log Out</string>
+    <string name="nazmul_profile_hyperlink"><a href="https://www.facebook.com/nazmul.islam.3517563/"></a></string>
+
+    <string name="soummo_profile_hyperlink"><a href="https://shovito.absbpeople.com/"></a></string>
+</resources>

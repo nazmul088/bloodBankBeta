@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_text_bg_grey"
+    >
+
+    <TextView
+        android:id="@+id/textView11"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Hospital Name"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="0dp"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintBottom_toTopOf="@id/textView69"
+        app:layout_constraintLeft_toRightOf="@id/imageView4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="90dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/hospital_building_icon" />
+
+    <TextView
+        android:id="@+id/textView69"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Available:"
+        app:layout_constraintLeft_toRightOf="@id/imageView4"
+        app:layout_constraintTop_toBottomOf="@id/textView11" />
+
+    <TextView
+        android:id="@+id/textView70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:layout_marginLeft="10dp"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="58dp"
+        app:layout_constraintTop_toTopOf="@id/textView69"
+        app:layout_constraintBottom_toBottomOf="@id/textView69"
+        app:layout_constraintLeft_toRightOf="@id/textView69"
+        />
+
+    <TextView
+        android:id="@+id/textView71"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:text="Total:"
+        app:layout_constraintBottom_toBottomOf="@id/textView69"
+        app:layout_constraintLeft_toRightOf="@id/textView70"
+        app:layout_constraintTop_toTopOf="@id/textView69"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView72"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="40"
+        app:layout_constraintTop_toTopOf="@id/textView69"
+        app:layout_constraintBottom_toBottomOf="@id/textView69"
+        app:layout_constraintLeft_toRightOf="@id/textView71"
+        android:layout_marginLeft="5dp"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <TextView
+        android:id="@+id/textView73"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Last Update about an hour age"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView69"
+        app:layout_constraintVertical_bias="0.009" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
