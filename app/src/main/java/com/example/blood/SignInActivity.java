@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.blood.Reset_Password.ResetPasswordActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,6 +46,13 @@ public class SignInActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+        prefs = this.getSharedPreferences("ResetPasswordPref",Context.MODE_PRIVATE);
+        String email = prefs.getString("resetEmail","");
+        if(email.length()>0)
+        {
+            startActivity(new Intent(SignInActivity.this,ResetPasswordActivity.class));
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
@@ -63,7 +71,7 @@ public class SignInActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(SignInActivity.this, ResetPasswordActivity.class));
             }
         });
 
@@ -90,7 +98,7 @@ public class SignInActivity extends AppCompatActivity {
                         if(!response.isSuccessful())
                         {
                             progressDialog.dismiss();
-                            Toast.makeText(SignInActivity.this,"Log In Not Successful",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignInActivity.this,"Log in not successful",Toast.LENGTH_LONG).show();
                         }
                         else
                         {
