@@ -59,6 +59,14 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+        textView = (TextView) findViewById(R.id.textView94);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
         cardView = (CardView) findViewById(R.id.cardView);
         cardView.setOnClickListener(new View.OnClickListener() {
