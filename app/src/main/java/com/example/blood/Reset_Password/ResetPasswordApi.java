@@ -11,4 +11,7 @@ import retrofit2.http.Query;
 public interface ResetPasswordApi {
     @POST("forgot")
     Call<UserReset> SendOtpResetPassowrd(@Body UserReset userReset);
+
+    @POST("verify-otp")
+    Call<UserReset> verifyOtp(@Body UserReset userReset);
 }

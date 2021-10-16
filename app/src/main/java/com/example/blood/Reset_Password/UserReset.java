@@ -4,10 +4,17 @@ public class UserReset {
     private String email;
     private String token;
     private String password;
+    private String message;
 
     public UserReset() {
     }
 
+
+    public UserReset(String email, String token, String password) {
+        this.email = email;
+        this.token = token;
+        this.password = password;
+    }
 
     public UserReset(String email) {
         this.email = email;
@@ -18,6 +25,13 @@ public class UserReset {
         this.password = password;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public String getEmail() {
         return email;

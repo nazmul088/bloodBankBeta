@@ -13,6 +13,11 @@
             android:icon="@drawable/ic_baseline_person_24"
             android:title="Profile" />
 
+        <item
+            android:id="@+id/padlock"
+            android:icon="@drawable/padlock"
+            android:title="Change Password" />
+
 
         <item
             android:id="@+id/team"

@@ -8,11 +8,17 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,6 +36,7 @@ import android.widget.Toast;
 
 import com.example.blood.Cylinder.CylinderActivity;
 import com.example.blood.Hospital.HospitalActivity;
+import com.example.blood.Reset_Password.ResetPasswordActivity2;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.BufferedReader;
@@ -50,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ImageView imageView;
 
     private UserApi userApi;
+    private UserSearch userSearch;
 
     private TextView textView;
     @Override
@@ -79,6 +87,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        if(isOnline())
+        {
+            System.out.println("Net nai");
+        }
 
 
         cardView = (CardView) findViewById(R.id.card2);
@@ -126,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if(response.isSuccessful())
                 {
                     progressDialog.dismiss();
+                    userSearch = response.body();
                     textView = (TextView) findViewById(R.id.donor_name);
                     textView.setText(response.body().getFirstName()+" "+response.body().getLastName());
                     if(response.body().getGender().equalsIgnoreCase("female"))
@@ -160,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public void onFailure(Call<UserSearch> call, Throwable t) {
-
+                Toast.makeText(MainActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -178,7 +192,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else
         {
-            this.finishAffinity();
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Are you sure you want to exit?") .setTitle("Exit").setCancelable(false
+            ).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    MainActivity.this.finishAffinity();
+                }
+            }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+
         }
 
     }
@@ -196,6 +226,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+
 
         switch (item.getItemId())
         {
@@ -221,11 +253,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId())
         {
             case R.id.homeMenu:
+                startActivity(new Intent(MainActivity.this,MainActivity.class));
                 break;
             case R.id.profile:
                 Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
                 startActivity(intent);
                 break;
+
+            case R.id.padlock:
+                Intent intent2 = new Intent(MainActivity.this, ResetPasswordActivity2.class);
+                intent2.putExtra("email",userSearch.getEmail());
+                startActivity(intent2);
+                break;
+
             case R.id.LogOut:
                 SharedPreferences prefs = this.getSharedPreferences("logInPref", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
@@ -257,4 +297,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return true;
     }
+
+    public boolean isOnline() {
+        ConnectivityManager conMgr = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        @SuppressLint("MissingPermission") NetworkInfo netInfo = conMgr.getActiveNetworkInfo();
+
+        if(netInfo == null || !netInfo.isConnected() || !netInfo.isAvailable()){
+            Toast.makeText(MainActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
+    }
+
 }

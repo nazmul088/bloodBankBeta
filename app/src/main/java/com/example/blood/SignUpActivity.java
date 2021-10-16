@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -438,10 +439,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void updateDatatoDatabase() {
 
-
-
-
-
         textView = (TextView) findViewById(R.id.textView4);
         if(TextUtils.isEmpty(textView.getText()))
         {
@@ -752,7 +749,7 @@ public class SignUpActivity extends AppCompatActivity {
         alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i){
-                if(i>=0)
+                if(position[0]>=0)
                 {
                     selectedUpazillaId = upazillaBasedOnDistrict.get(position[0]).get_id();
                     textView = (TextView) findViewById(R.id.textView3);
