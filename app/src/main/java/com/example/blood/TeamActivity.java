@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 
@@ -48,7 +50,7 @@ public class TeamActivity extends AppCompatActivity {
         constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://shovito.absbpeople.com/")));
             }
         });
 
@@ -56,7 +58,7 @@ public class TeamActivity extends AppCompatActivity {
         constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/nazmul.islam.3517563/")));
             }
         });
 
