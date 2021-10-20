@@ -5,11 +5,10 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity"
     tools:openDrawer="start">
-
-
 
 
     <com.google.android.material.navigation.NavigationView
@@ -25,10 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:headerLayout="@layout/version_message"/>
-
-
-
+            app:headerLayout="@layout/version_message" />
 
 
     </com.google.android.material.navigation.NavigationView>
@@ -36,8 +32,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -45,59 +40,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/animation_background"
-           app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/constraint_layout_1"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/constraint_layout_1"
-            app:theme="@style/ToolbarColoredBackArrow"
-            />
+            app:theme="@style/ToolbarColoredBackArrow" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:id="@+id/constraint_layout_1"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:background="@drawable/animation_background"
             app:layout_constraintBottom_toTopOf="@id/gridLayout"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
 
-            android:background="@drawable/animation_background"
-            >
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:src="@drawable/banner"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
 
                 />
 
 
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <!--<View
-            android:id="@+id/bg_top_header"
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:layout_marginTop="55dp"
-            android:background="@drawable/top_header"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />-->
-
-
 
 
         <GridLayout
             android:id="@+id/gridLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
+
             android:alignmentMode="alignMargins"
             android:columnCount="2"
             android:columnOrderPreserved="false"
@@ -116,15 +98,16 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
 
-                android:outlineAmbientShadowColor="#2575fc"
-                android:outlineSpotShadowColor="#2575fc"
+                android:outlineAmbientShadowColor="#1167F8"
+                android:outlineSpotShadowColor="#1168FB"
 
 
                 app:cardCornerRadius="8dp"
-                app:cardElevation="26dp">
+                app:cardElevation="13dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -135,14 +118,13 @@
                         android:id="@id/imageView2"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="40dp"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="40dp"
                         android:background="@drawable/bloodbank"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
 
@@ -150,15 +132,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="Search Blood"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imageView2"
-                        app:layout_constraintRight_toRightOf="parent"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_marginBottom="8dp"
-                        android:textStyle="bold" />
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView2" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -170,13 +152,14 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:outlineAmbientShadowColor="#2575fc"
                 android:outlineSpotShadowColor="#2575fc"
 
                 app:cardCornerRadius="8dp"
-                app:cardElevation="26dp">
+                app:cardElevation="13dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -185,34 +168,33 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                <ImageView
-                    android:id="@id/imageView3"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginBottom="40dp"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/hospital"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    />
+                    <ImageView
+                        android:id="@id/imageView3"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="40dp"
+                        android:background="@drawable/hospital"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                    <TextView
 
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Hospital"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/imageView3"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginBottom="8dp"
-                    android:textStyle="bold" />
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Hospital"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView3" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
@@ -223,13 +205,15 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="12dp"
+                android:layout_marginBottom="20dp"
                 android:background="@color/blue"
                 android:outlineAmbientShadowColor="#2575fc"
                 android:outlineSpotShadowColor="#2575fc"
 
                 app:cardCornerRadius="8dp"
-                app:cardElevation="26dp">
+                app:cardElevation="13dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -243,13 +227,13 @@
                         android:id="@id/imageView4"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="40dp"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="40dp"
                         android:background="@drawable/ambulance"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
 
                         />
 
@@ -258,17 +242,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="Ambulance"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
 
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imageView4"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_marginBottom="8dp"
 
-                        android:textStyle="bold" />
+                        app:layout_constraintTop_toBottomOf="@id/imageView4" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -280,19 +264,21 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginBottom="20dp"
                 android:background="@color/blue"
                 android:outlineAmbientShadowColor="#2575fc"
                 android:outlineSpotShadowColor="#2575fc"
 
                 app:cardCornerRadius="8dp"
-                app:cardElevation="26dp">
+                app:cardElevation="13dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -300,30 +286,28 @@
                         android:id="@id/imageView5"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:layout_marginBottom="40dp"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="40dp"
                         android:background="@drawable/oxygen_cylinder"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="Oxygen Cylinder"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/imageView5"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_marginBottom="8dp"
-                        />
+                        app:layout_constraintTop_toBottomOf="@id/imageView5" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -331,28 +315,6 @@
 
         </GridLayout>
 
-
-
-      <!--  <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-            app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:srcCompat="@drawable/absb_logo"
-            tools:ignore="NotSibling" />-->
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@color/white"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gridLayout"
-            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

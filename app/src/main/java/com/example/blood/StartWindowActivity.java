@@ -28,8 +28,10 @@ public class StartWindowActivity extends AppCompatActivity {
 
         start_image=findViewById(R.id.imageView2);
         logo=findViewById(R.id.trackYourBus);
+        slogan = findViewById(R.id.textView1);
         start_image.setAnimation(topAnim);
         logo.setAnimation(bottomAnim);
+        slogan.setAnimation(bottomAnim);
 
 
 

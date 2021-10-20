@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('F:\\Study\\L-4-T-1\\Blood Project\\Nazmul\\Credentials\\PrivateKey.jks')
+            keyAlias 'NazmulKey'
+            keyPassword 'Nazmul@5088'
+            storePassword 'Nazmul@5088'
+        }
+    }
     compileSdkVersion 30
 
 

@@ -368,8 +368,8 @@ public class SignUpActivity extends AppCompatActivity {
                 if(i>0)
                 {
                     textView = (TextView) findViewById(R.id.textView7);
-                    textView.setVisibility(View.VISIBLE);
-
+                    textView.setFocusable(true);
+                    textView.setFocusableInTouchMode(true);
                 }
 
             }
