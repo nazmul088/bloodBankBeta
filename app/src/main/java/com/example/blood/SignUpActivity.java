@@ -73,6 +73,13 @@ public class SignUpActivity extends AppCompatActivity {
     private String selectedUpazillaId=null;
 
     private ProgressDialog progressDialog;
+    int day = -1;
+    int month = -1;
+    int year = -1;
+
+    int day1 = -1;
+    int month1 = -1;
+    int year1 = -1;
 
 
 
@@ -113,14 +120,21 @@ public class SignUpActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(SignUpActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        String date = i+"-"+i1+"-"+i2;
+                        int mon = i1+1;
+                        day = i2;
+                        month=i1;
+                        year=i;
+
+                        String date = i+"-"+mon+"-"+i2;
+                        //now set datepicker to this date
                         editText = (EditText) findViewById(R.id.textView);
                         editText.setText(date);
 
                     }
                 }, Calendar.getInstance().get(Calendar.YEAR),
                         Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-
+                if(day!=-1 && month!=-1 && year!=-1)
+                    datePickerDialog.updateDate(year,month,day);
                 datePickerDialog.show();
 
             }
@@ -132,17 +146,22 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(SignUpActivity.this, new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(SignUpActivity.this,new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        String date = i+"-"+i1+"-"+i2;
+                        int mon = i1+1;
+                        day1 = i2;
+                        month1=i1;
+                        year1=i;
+                        String date = i+"-"+mon+"-"+i2;
                         editText = (EditText) findViewById(R.id.editTextTextPersonName2);
                         editText.setText(date);
 
                     }
                 }, Calendar.getInstance().get(Calendar.YEAR),
                         Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-
+                if(day1!=-1 && month1!=-1 && year1!=-1)
+                    datePickerDialog.updateDate(year1,month1,day1);
                 datePickerDialog.show();
 
             }
@@ -863,11 +882,12 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 
-    private void showDatePickerDialog() {
+   /* private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                String date = i+"-"+i1+"-"+i2;
+                int month = i1+1;
+                String date = i+"-"+String.valueOf(month)+"-"+i2;
                 textView = (TextView)findViewById(R.id.textView);
                 textView.setText(date);
 
@@ -876,7 +896,7 @@ public class SignUpActivity extends AppCompatActivity {
                 Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
 
         datePickerDialog.show();
-    }
+    }*/
 
 
 }

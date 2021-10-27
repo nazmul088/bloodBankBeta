@@ -17,5 +17,6 @@
     <color name="light_indigo">#ccffeb</color>
     <color name="light_blue">#ccd9ff</color>
     <color name="light_voilet"> #ffb3ff</color>
+    <color name="red">#da1270</color>
 
 </resources>

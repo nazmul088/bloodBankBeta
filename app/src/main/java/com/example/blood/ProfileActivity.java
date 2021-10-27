@@ -95,6 +95,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     private String Userid;
 
+    int day=-1,month=-1,year=-1;
+    int day1=-1,month1=-1,year1=-1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -398,14 +401,19 @@ public class ProfileActivity extends AppCompatActivity {
                     DatePickerDialog datePickerDialog = new DatePickerDialog(ProfileActivity.this, new DatePickerDialog.OnDateSetListener() {
                         @Override
                         public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                            String date = i + "-" + i1 + "-" + i2;
-                            //editText = (EditText) findViewById(R.id.textView10);
+                            int mon = i1+1;
+                            String date = i + "-" + mon + "-" + i2;
+                            day = i2;
+                            month = i1;
+                            year = i;
+                            editText = (EditText) findViewById(R.id.textView10);
                             editText.setText(date);
 
                         }
                     }, Calendar.getInstance().get(Calendar.YEAR),
                             Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-
+                        if(day != -1 && month != -1 && year !=-1)
+                            datePickerDialog.updateDate(year,month,day);
 
                     datePickerDialog.show();
                 }
@@ -424,14 +432,19 @@ public class ProfileActivity extends AppCompatActivity {
                     DatePickerDialog datePickerDialog = new DatePickerDialog(ProfileActivity.this, new DatePickerDialog.OnDateSetListener() {
                         @Override
                         public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                            String date = i + "-" + i1 + "-" + i2;
-                            //editText = (EditText) findViewById(R.id.editTextTextPersonName2);
+                            int mon = i1+1;
+                            day1 = i2;
+                            month1 = i1;
+                            year1 = i;
+                            String date = i + "-" + mon + "-" + i2;
+                            editText = (EditText) findViewById(R.id.editTextTextPersonName2);
                             editText.setText(date);
 
                         }
                     }, Calendar.getInstance().get(Calendar.YEAR),
                             Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-
+                    if(day1 != -1 && month1 != -1 && year1 !=-1)
+                        datePickerDialog.updateDate(year1,month1,day1);
                     datePickerDialog.show();
 
                 }
@@ -539,25 +552,27 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
+        //set all genders
         spinner = (Spinner) findViewById(R.id.spinner1);
         ArrayList<String> genders = new ArrayList<>();
         genders.add("Select Any");
         genders.add("Male");
         genders.add("Female");
         genders.add("Others");
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genders) {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,genders){
             @Override
             public boolean isEnabled(int position) {
-                if (position == 0)
+                if(position==0)
                     return false;
                 return true;
             }
 
             @Override
             public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                View view = super.getDropDownView(position, convertView, parent);
+                View view =  super.getDropDownView(position, convertView, parent);
                 TextView textView = (TextView) view;
-                if (position == 0)
+                if(position == 0)
                     textView.setTextColor(Color.GRAY);
                 else
                     textView.setTextColor(Color.BLACK);
@@ -567,21 +582,11 @@ public class ProfileActivity extends AppCompatActivity {
         };
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
 
+        //Set all blood groups
         spinner = (Spinner) findViewById(R.id.spinner2);
         ArrayList<String> bloodgroups = new ArrayList<>();
         bloodgroups.add("Select Any");
