@@ -69,11 +69,12 @@ public class TeamActivity extends AppCompatActivity {
 
         textView = (TextView)findViewById(R.id.textView11);
         textView.startAnimation(animation1);
+        //rotate animation
         Animation animation2 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
 
 
-        shapeableImageView.startAnimation(animation2);
-        shapeableImageView1.startAnimation(animation2);
+       // shapeableImageView.startAnimation(animation2);
+        //shapeableImageView1.startAnimation(animation2);
 
 
         //animation for organizers
