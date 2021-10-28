@@ -123,8 +123,8 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // Your code
-                finish();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
             }
         });
 
@@ -930,5 +930,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+    }
 }

@@ -10,7 +10,11 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
+import com.google.android.material.imageview.ShapeableImageView;
 
 
 public class TeamActivity extends AppCompatActivity {
@@ -43,6 +47,41 @@ public class TeamActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.soummo_profile);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+        ShapeableImageView shapeableImageView = findViewById(R.id.imageView1);
+        ShapeableImageView shapeableImageView1 = findViewById(R.id.imageView);
+
+
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
+        //animation for us
+        textView = (TextView)findViewById(R.id.textView);
+        textView.startAnimation(animation1);
+
+        textView = (TextView)findViewById(R.id.textView9);
+        textView.startAnimation(animation1);
+
+        textView = (TextView)findViewById(R.id.textView10);
+        textView.startAnimation(animation1);
+
+        textView = (TextView)findViewById(R.id.textView1);
+        textView.startAnimation(animation1);
+
+        textView = (TextView)findViewById(R.id.textView11);
+        textView.startAnimation(animation1);
+        Animation animation2 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate);
+
+
+        shapeableImageView.startAnimation(animation2);
+        shapeableImageView1.startAnimation(animation2);
+
+
+        //animation for organizers
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_more_time);
+        constraintLayout = (ConstraintLayout) findViewById(R.id.constraint_layout_11);
+        constraintLayout.startAnimation(animation);
+        constraintLayout = (ConstraintLayout) findViewById(R.id.constraint_layout_12);
+        constraintLayout.startAnimation(animation);
 
 
 
